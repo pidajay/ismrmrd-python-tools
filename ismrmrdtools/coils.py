@@ -234,8 +234,8 @@ def smooth(img, box=5):
     t_real = np.zeros(img.shape)
     t_imag = np.zeros(img.shape)
 
-    ndimage.filters.uniform_filter(img.real,size=box,output=t_real)
-    ndimage.filters.uniform_filter(img.imag,size=box,output=t_imag)
+    ndimage.uniform_filter(img.real,size=box,output=t_real)
+    ndimage.uniform_filter(img.imag,size=box,output=t_imag)
 
     simg = t_real + 1j*t_imag
 
